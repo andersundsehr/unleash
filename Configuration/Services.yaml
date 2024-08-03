@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+  Andersundsehr\Unleash\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+  Andersundsehr\Unleash\Command\ShowFeatureFlagsCommand:
+    tags:
+      -
+        name: console.command
+        command: 'unleash:show'
+        description: 'show current feature flags for this instance'
+        schedulable: false
+  Unleash\Client\Unleash:
+    public: true
+    factory: ['@Andersundsehr\Unleash\UnleashFactory', '__invoke']

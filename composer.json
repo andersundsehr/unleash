@@ -1,0 +1,40 @@
+{
+  "name": "andersundsehr/unleash",
+  "description": "TYPO3 extension to integrate the getunleash.io feature toggle service.",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "type": "typo3-cms-extension",
+  "require": {
+    "php": "~8.2.0 || ~8.3.0",
+    "typo3/cms-core": "^11.5 || ^12.4 || ^13.0",
+    "typo3/cms-lowlevel": "^11.5 || ^12.4 || ^13.0",
+    "unleash/client": "^2.5"
+  },
+  "require-dev": {
+    "pluswerk/grumphp-config": "^7.0.4",
+    "saschaegerer/phpstan-typo3": "^1.10.1",
+    "ssch/typo3-rector": "^2.6.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Andersundsehr\\Unleash\\": "Classes/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true,
+      "php-http/discovery": true,
+      "phpro/grumphp": true,
+      "phpstan/extension-installer": true,
+      "pluswerk/grumphp-config": true,
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "unleash"
+    }
+  }
+}

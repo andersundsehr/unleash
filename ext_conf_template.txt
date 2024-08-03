@@ -1,0 +1,14 @@
+# cat=main; type=string; label=App url: Url of the app eg. https://unleash.example.com/api/
+appUrl=
+
+# cat=main; type=string; label=App name: Name of the app
+appName=TYPO3
+
+# cat=main; type=string; label=instance Id: Unique identifier for the current instance
+instanceId=default
+
+# cat=main; type=string; label=Authorization: API token for the Unleash API (use different tokens for different environments)
+authorization=default:development.unleash-insecure-api-token
+
+# TODO authorization decides which environment is used
+#authorization=default:production.889eeb67868224f86a7ed848a93989eeb6d95ac650ac59bbc4817390
