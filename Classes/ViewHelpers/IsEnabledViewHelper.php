@@ -6,6 +6,7 @@ namespace Andersundsehr\Unleash\ViewHelpers;
 
 use Override;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
 use Unleash\Client\Unleash;
 
@@ -21,12 +22,10 @@ final class IsEnabledViewHelper extends AbstractConditionViewHelper
 
     /**
      * @param array{feature: string, default: bool} $arguments
-     * @return bool
      */
     #[Override]
-    protected static function evaluateCondition($arguments = null)
+    public static function verdict(array $arguments, RenderingContextInterface $renderingContext): bool
     {
-        assert(is_array($arguments), 'Arguments must be an array');
         $unleash = GeneralUtility::makeInstance(Unleash::class);
         assert($unleash instanceof Unleash);
         return $unleash->isEnabled($arguments['feature'], default: (bool)$arguments['default']);

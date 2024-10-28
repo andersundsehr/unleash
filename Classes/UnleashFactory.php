@@ -25,7 +25,7 @@ final readonly class UnleashFactory
     public function getConfig(string $key): string
     {
         return $this->extensionConfiguration->get('unleash', $key)
-            ?: throw new RuntimeException('Missing ' . $key . ' in configuration');
+            ?: throw new RuntimeException('Missing ' . $key . ' in configuration', 1132011323);
     }
 
     public function __invoke(): Unleash
